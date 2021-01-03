@@ -26,8 +26,9 @@ class TrumbowygWidget(Textarea):
             'fs_trumbowyg/js/trumbowyg.video.js',
         )
 
-    def render(self, name, value, attrs=None):
-        output = super(TrumbowygWidget, self).render(name, value, attrs)
+    def render(self, name, value, attrs=None, renderer=None):
+        output = super(TrumbowygWidget, self).render(name, value, attrs,
+                                                     renderer)
         script = u'''
             <script>
                 $("#id_%s").trumbowyg({
